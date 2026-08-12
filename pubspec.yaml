@@ -1,0 +1,78 @@
+name: flutter_application_2
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.3.0
+  rive: ^0.14.9
+  
+  supabase_flutter: ^2.16.0
+  flutter_dotenv: ^5.1.0     
+
+  video_player: ^2.9.0
+  sqflite: ^2.3.0
+  connectivity_plus: ^7.3.1
+  path_provider: ^2.1.0
+  provider: ^6.1.1
+  google_sign_in: ^7.2.0
+  sign_in_with_apple: ^8.1.0
+  shared_preferences: ^2.2.2
+  flutter_secure_storage: ^10.3.1
+  lottie: ^3.5.1
+  google_maps_flutter: ^2.5.0
+  geocoding: ^2.1.0
+  location: ^5.0.0
+  http: ^1.2.2
+  flutter_animate: ^4.0.0
+  flutter_skeleton_shimmer: ^0.1.1
+  flutter_launcher_icons: ^0.13.1
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  web:
+    generate: true
+  image_path: "assets/icons/Mutchu-iOS-Default-1024@1x.png"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - .env
+    - assets/
+    - assets/icons/
+    - assets/character-follow.riv
+    - assets/drinks/
+    - assets/foods/
+    - assets/lotties/
+    - assets/icons/Mutchu-iOS-Default-1024@1x.png
+
+  fonts:
+    - family: Ginto
+      fonts:
+        - asset: assets/fonts/ginto_nord_light.otf
+    
+    - family: GintoBold
+      fonts:
+        - asset: assets/fonts/ginto_nord_bold.otf
+
+    - family: GintoThin
+      fonts:
+        - asset: assets/fonts/ginto_nord_thin.otf
+    
+    - family: GintoRegNorm
+      fonts:
+        - asset: assets/fonts/ginto_nord_reg_norm.otf
