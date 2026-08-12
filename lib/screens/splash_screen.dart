@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/colors.dart';
 import '../utils/functions.dart';
 
 import 'package:flutter_svg/svg.dart';
@@ -34,11 +35,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF617B60),
+      appBar: AppBar(
+        backgroundColor: MyColors.primary,
+      ),
+      backgroundColor: MyColors.primary,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            const SizedBox(height: 250,),
             Center(
               child: SvgPicture.asset(
                 'assets/icons/Mutchu_Logo.svg',

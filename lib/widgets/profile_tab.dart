@@ -983,7 +983,12 @@ class _ProfileTabState extends State<ProfileTab> {
     final authProvider = Provider.of<SupabaseAuthProvider>(context);
     final user = authProvider.currentUser;
     final bool hasEmail = user?.email != null && user!.email!.isNotEmpty;
-    
+      
+    final String fullName = user?.userMetadata?['name'] ?? 'Guest User';
+    final List<String> nameParts = fullName.split(' ');
+    final String firstName = nameParts.isNotEmpty ? nameParts[0] : '';
+    final String lastName = nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '';
+
     return Scaffold(
       backgroundColor: MyColors.primary,
       appBar: AppBar(
@@ -1020,7 +1025,7 @@ class _ProfileTabState extends State<ProfileTab> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            _buildProfileAvatar(),
+            _buildProfileAvatar(firstName, lastName),
             const SizedBox(height: 16),
 
             Card(
@@ -1378,32 +1383,20 @@ class _ProfileTabState extends State<ProfileTab> {
   }
 }
 
-Widget _buildProfileAvatar() {
-  return Stack(
-    children: [
-      Container(
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-          color: Colors.grey[200],
-          shape: BoxShape.circle,
-          border: Border.all(color: MyColors.primary, width: 3),
-        ),
-        child: const Icon(Icons.person, size: 50, color: Colors.grey),
+Widget _buildProfileAvatar(String firstname, String lastname) {
+  final String initials = '${firstname.isNotEmpty ? firstname[0] : ''}${lastname.isNotEmpty ? lastname[0] : ''}'.toUpperCase();
+
+  return CircleAvatar(
+    radius: 40,
+    backgroundColor: MyColors.secondary,
+    child: Text(
+      initials.isEmpty ? '?' : initials,
+      style: const TextStyle(
+        color: MyColors.primary_50,
+        fontSize: 30,
+        fontFamily: 'GintoBold'
       ),
-      Positioned(
-        bottom: 0,
-        right: 0,
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          decoration: const BoxDecoration(
-            color: MyColors.primary,
-            shape: BoxShape.circle,
-          ),
-          child: const Icon(Icons.camera_alt, color: Colors.white, size: 16),
-        ),
-      ),
-    ],
+    ),
   );
 }
 

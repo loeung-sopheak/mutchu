@@ -269,18 +269,77 @@ class _LoginScreenState extends State<LoginScreen> {
                   border: Border.all(width: 1.5, color: Colors.black),
                   backgroundColor: Colors.transparent,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       const Icon(
-                        Icons.phone_iphone_rounded,
+                        Icons.phone_in_talk_rounded,
                         size: 20,
                         color: Colors.black,
                       ),
+                      const SizedBox(width: 60,),
                       const Text(
                         'Login with Phone',
                         style: TextStyle(
                           fontFamily: 'GintoRegNorm',
                           color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 16,),
+
+                AnimatedButton(
+                  onPressed: () {
+                  },
+                  endBorderRadius: 14,
+                  startBorderRadius: 10,
+                  height: 50,
+                  backgroundColor: CupertinoColors.black,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.apple_rounded,
+                        size: 20,
+                        color: CupertinoColors.white,
+                      ),
+                      const SizedBox(width: 60,),
+                      const Text(
+                        'Continue with Apple',
+                        style: TextStyle(
+                          fontFamily: 'GintoRegNorm',
+                          color: CupertinoColors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 16,),
+
+                AnimatedButton(
+                  onPressed: () {
+                  },
+                  endBorderRadius: 14,
+                  startBorderRadius: 10,
+                  height: 50,
+                  backgroundColor: MyColors.primary_50,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.mail_rounded,
+                        size: 20,
+                        color: CupertinoColors.white,
+                      ),
+                      const SizedBox(width: 60,),
+                      const Text(
+                        'Continue with Google',
+                        style: TextStyle(
+                          fontFamily: 'GintoRegNorm',
+                          color: CupertinoColors.white,
                         ),
                       ),
                     ],
