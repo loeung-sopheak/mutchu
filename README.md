@@ -1,3 +1,3 @@
-# flutter_application_2
+# Mutchu
 
-A new Flutter project.
+A food/drink delivery app project for studies.
